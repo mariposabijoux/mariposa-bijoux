@@ -1,0 +1,452 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mariposa Bijoux | L'élégance en chaque détail | Collection Royale</title>
+    <!-- Font Awesome pour les icônes réseaux sociaux -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;600;700&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
+    
+    <style>
+        :root {
+            --baby-pink: #f8d7da; /* Rose bébé pour les prix et détails */
+            --soft-pink: #f4c2c2; /* Rose plus doux pour les bordures */
+            --silver-light: #f5f5f5; /* Argent clair */
+            --silver-accent: #e0e0e0; /* Bordures argent */
+            --dark-silver: #a8a8a8;
+            --black: #1a1a1a; /* Noir élégant pour le texte et éléments clés */
+            --white: #ffffff; /* Fond blanc propre */
+            --text-color: #333333;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Montserrat', sans-serif;
+            background-color: var(--white);
+            color: var(--text-color);
+            line-height: 1.6;
+        }
+
+        h1, h2, h3, h4 {
+            font-family: 'Cormorant Garamond', serif;
+            letter-spacing: 1px;
+        }
+
+        /* Top Bar Socials */
+        .top-bar {
+            background-color: var(--black);
+            color: var(--white);
+            padding: 10px 5%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-size: 0.9rem;
+            border-bottom: 2px solid var(--soft-pink);
+        }
+
+        .social-links a {
+            color: var(--white);
+            margin-left: 15px;
+            font-size: 1.2rem;
+            transition: color 0.3s;
+            text-decoration: none;
+        }
+
+        .social-links a:hover {
+            color: var(--soft-pink);
+        }
+
+        /* Header & Logo */
+        header {
+            background-color: var(--white);
+            padding: 30px 5% 20px 5%;
+            text-align: center;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            border-bottom: 1px solid var(--silver-accent);
+        }
+
+        .logo-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            max-width: 300px;
+            margin: 0 auto;
+        }
+
+        .logo-container img {
+            max-width: 100%;
+            height: auto;
+            display: block;
+            margin-bottom: 5px; /* Espace réduit */
+        }
+
+        /* Masquer le titre textuel car le logo l'inclut */
+        .brand-title {
+            display: none;
+        }
+
+        .brand-slogan {
+            font-family: 'Montserrat', sans-serif; /* Slogan épuré */
+            font-size: 1rem;
+            font-weight: 300;
+            color: #666; /* Couleur douce */
+            text-transform: capitalize;
+            letter-spacing: 1px;
+            margin-top: 5px;
+        }
+
+        /* Banner Hero - Argent et Rose Bébé */
+        .hero {
+            background: linear-gradient(135deg, var(--silver-light) 0%, var(--white) 50%, var(--baby-pink) 100%);
+            padding: 70px 20px;
+            text-align: center;
+            border-bottom: 2px solid var(--soft-pink);
+        }
+
+        .hero h2 {
+            font-size: 3rem;
+            color: var(--black);
+            margin-bottom: 15px;
+            font-weight: 600;
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            color: #555;
+            max-width: 700px;
+            margin: 0 auto 30px auto;
+            font-weight: 400;
+        }
+
+        /* Catalogue Section */
+        .container {
+            max-width: 1250px;
+            margin: 60px auto;
+            padding: 0 30px;
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 2.5rem;
+            color: var(--black);
+            margin-bottom: 50px;
+            position: relative;
+            font-weight: 700;
+        }
+
+        .section-title::after {
+            content: '';
+            width: 80px;
+            height: 3px;
+            background-color: var(--soft-pink);
+            display: block;
+            margin: 15px auto 0 auto;
+            border-radius: 2px;
+        }
+
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 40px;
+        }
+
+        /* Carte Produit - Élégante Argent */
+        .card {
+            background: var(--white);
+            border: 1px solid var(--silver-accent);
+            border-radius: 10px;
+            overflow: hidden;
+            transition: transform 0.4s, box-shadow 0.4s;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        .card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 15px 30px rgba(0,0,0,0.1);
+            border-color: var(--soft-pink);
+        }
+
+        .card img {
+            width: 100%;
+            height: 300px;
+            object-fit: cover;
+            border-bottom: 1px solid var(--silver-accent);
+        }
+
+        .card-content {
+            padding: 25px;
+            text-align: center;
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        .card-title {
+            font-size: 1.5rem;
+            color: var(--black);
+            margin-bottom: 10px;
+            font-weight: 600;
+        }
+
+        .card-desc {
+            font-size: 0.95rem;
+            color: #777;
+            margin-bottom: 20px;
+            font-weight: 300;
+        }
+
+        .card-price {
+            font-size: 1.4rem;
+            font-weight: 700;
+            color: var(--black);
+            margin-bottom: 20px;
+            background-color: var(--baby-pink);
+            padding: 8px 15px;
+            border-radius: 25px;
+            display: inline-block;
+        }
+
+        .btn-whatsapp {
+            background-color: var(--black);
+            color: var(--white);
+            text-decoration: none;
+            padding: 14px 25px;
+            border-radius: 8px;
+            font-weight: 600;
+            font-size: 1rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            transition: background-color 0.3s;
+        }
+
+        .btn-whatsapp:hover {
+            background-color: #25D366; /* Vert WhatsApp au survol */
+        }
+
+        /* Footer - Noir et Rose Soft */
+        footer {
+            background-color: var(--black);
+            color: var(--white);
+            text-align: center;
+            padding: 40px 30px;
+            margin-top: 80px;
+            border-top: 4px solid var(--soft-pink);
+        }
+
+        footer p {
+            font-size: 1rem;
+            color: var(--silver-accent);
+            font-weight: 300;
+            margin-bottom: 20px;
+        }
+
+        .footer-socials {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+        }
+
+        .footer-socials a {
+            color: var(--white);
+            font-size: 1.6rem;
+            transition: color 0.3s;
+        }
+
+        .footer-socials a:hover {
+            color: var(--soft-pink);
+        }
+
+        /* Responsive Mobile */
+        @media (max-width: 768px) {
+            .hero h2 { font-size: 2.2rem; }
+            .top-bar { flex-direction: column; gap: 10px; text-align: center; }
+            .section-title { font-size: 2rem; }
+            .logo-container { max-width: 200px; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Barre supérieure Réseaux Sociaux -->
+    <div class="top-bar">
+        <span>Livraison Partout au Maroc 🇲🇦 <i class="fas fa-shipping-fast"></i></span>
+        <div class="social-links">
+            <a href="https://instagram.com/VOTRE_COMPTE" target="_blank" title="Suivez-nous sur Instagram"><i class="fab fa-instagram"></i></a>
+            <a href="https://facebook.com/share/1bjkUSKtcR/?mibextid=wwXIfr" target="_blank" title="Aimez notre page Facebook"><i class="fab fa-facebook-f"></i></a>
+            <a href="https://tiktok.com/@VOTRE_COMPTE" target="_blank" title="Suivez-nous sur TikTok"><i class="fab fa-tiktok"></i></a>
+            <a href="https://wa.me/212775601994" target="_blank" title="Contactez-nous sur WhatsApp"><i class="fab fa-whatsapp"></i></a>
+        </div>
+    </div>
+
+    <!-- En-tête / Logo -->
+    <header>
+        <div class="logo-container">
+            <!-- Nom du fichier logo à placer dans le dossier GitHub : logo_mariposa.png -->
+            <img src="logo_mariposa.png" alt="Mariposa Bijoux Logo">
+            <!-- Masqué car le logo l'inclut -->
+            <h1 class="brand-title">Mariposa Bijoux</h1>
+            <p class="brand-slogan">L'élégance en chaque détail</p>
+        </div>
+    </header>
+
+    <!-- Bannière d'accueil -->
+    <section class="hero">
+        <h2>Sublimez Votre Éclat</h2>
+        <p>Découvrez notre collection exclusive de bijoux raffinés conçus pour révéler votre élégance au quotidien. Chaque détail compte.</p>
+    </section>
+
+    <!-- Section Produits -->
+    <div class="container">
+        <h2 class="section-title">Nos Créations Royales</h2>
+
+        <div class="grid">
+
+            <!-- Produit 1 -->
+            <div class="card">
+                <img src="boucle 1.jpeg" alt="Boucles d'oreilles Fleur Émeraude - Mariposa Bijoux">
+                <div class="card-content">
+                    <div>
+                        <h3 class="card-title">Fleur Émeraude</h3>
+                        <p class="card-desc">Boucles d'oreilles délicates aux pétales nacrés et une touche subtile de vert émeraude.</p>
+                    </div>
+                    <div>
+                        <span class="card-price">49 DH</span>
+                        <a href="https://wa.me/212775601994?text=Bonjour,%20je%20souhaite%20commander%20les%20boucles%20Fleur%20Émeraude" class="btn-whatsapp" target="_blank">
+                            <i class="fab fa-whatsapp"></i> Commander
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Produit 2 -->
+            <div class="card">
+                <img src="boucle 2.jpeg" alt="Boucles d'oreilles Crystal Swan - Mariposa Bijoux">
+                <div class="card-content">
+                    <div>
+                        <h3 class="card-title">Crystal Swan</h3>
+                        <p class="card-desc">Puces d'oreilles cygne élégantes pavées de strass étincelants pour une brillance absolue.</p>
+                    </div>
+                    <div>
+                        <span class="card-price">49 DH</span>
+                        <a href="https://wa.me/212775601994?text=Bonjour,%20je%20souhaite%20commander%20les%20boucles%20Crystal%20Swan" class="btn-whatsapp" target="_blank">
+                            <i class="fab fa-whatsapp"></i> Commander
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Produit 3 -->
+            <div class="card">
+                <img src="BOUCLE 3.jpeg" alt="Set Kitty Gold Pack - Mariposa Bijoux">
+                <div class="card-content">
+                    <div>
+                        <h3 class="card-title">Kitty Gold Pack</h3>
+                        <p class="card-desc">Un set tendance de 3 paires de puces d'oreilles dorées : Hello Kitty, Nœuds et Brillants.</p>
+                    </div>
+                    <div>
+                        <span class="card-price">49 DH</span>
+                        <a href="https://wa.me/212775601994?text=Bonjour,%20je%20souhaite%20commander%20le%20pack%20Kitty%20Gold%20Pack" class="btn-whatsapp" target="_blank">
+                            <i class="fab fa-whatsapp"></i> Commander
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Produit 4 -->
+            <div class="card">
+                <img src="boucle 4.jpeg" alt="Boucles d'oreilles Lucky Bloom - Mariposa Bijoux">
+                <div class="card-content">
+                    <div>
+                        <h3 class="card-title">Lucky Bloom</h3>
+                        <p class="card-desc">Boucles trèfle dorées porte-bonheur serties de strass avec une perle centrale fine.</p>
+                    </div>
+                    <div>
+                        <span class="card-price">49 DH</span>
+                        <a href="https://wa.me/212775601994?text=Bonjour,%20je%20souhaite%20commander%20les%20boucles%20Lucky%20Bloom" class="btn-whatsapp" target="_blank">
+                            <i class="fab fa-whatsapp"></i> Commander
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Produit 5 -->
+            <div class="card">
+                <img src="boucle 5.jpeg" alt="Boucles d'oreilles Silver Sakura - Mariposa Bijoux">
+                <div class="card-content">
+                    <div>
+                        <h3 class="card-title">Silver Sakura</h3>
+                        <p class="card-desc">Grandes fleurs argentées à la texture scintillante rehaussées d'une perle centrale.</p>
+                    </div>
+                    <div>
+                        <span class="card-price">49 DH</span>
+                        <a href="https://wa.me/212775601994?text=Bonjour,%20je%20souhaite%20commander%20les%20boucles%20Silver%20Sakura" class="btn-whatsapp" target="_blank">
+                            <i class="fab fa-whatsapp"></i> Commander
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Produit 6 -->
+            <div class="card">
+                <img src="ENSEMBLE 2.jpeg" alt="Parure Ensemble Malachite Queen - Mariposa Bijoux">
+                <div class="card-content">
+                    <div>
+                        <h3 class="card-title">Ensemble Malachite Queen</h3>
+                        <p class="card-desc">Parure acier inoxydable raffinée (Collier & Bracelet) avec une pierre ovale verte malachite.</p>
+                    </div>
+                    <div>
+                        <span class="card-price">99 DH</span>
+                        <a href="https://wa.me/212775601994?text=Bonjour,%20je%20souhaite%20commander%20l'Ensemble%20Malachite%20Queen" class="btn-whatsapp" target="_blank">
+                            <i class="fab fa-whatsapp"></i> Commander
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Produit 7 -->
+            <div class="card">
+                <img src="ensemble.jpeg" alt="Parure Ensemble Hexagone Diamant - Mariposa Bijoux">
+                <div class="card-content">
+                    <div>
+                        <h3 class="card-title">Ensemble Hexagone Diamant</h3>
+                        <p class="card-desc">Parure majestueuse 4 pièces (Collier, Bracelet, Bague, Boucles) à motifs hexagones pavés.</p>
+                    </div>
+                    <div>
+                        <span class="card-price">150 DH</span>
+                        <a href="https://wa.me/212775601994?text=Bonjour,%20je%20souhaite%20commander%20l'Ensemble%20Hexagone%20Diamant" class="btn-whatsapp" target="_blank">
+                            <i class="fab fa-whatsapp"></i> Commander
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <!-- Pied de page (Footer) -->
+    <footer>
+        <p>&copy; 2026 Mariposa Bijoux. Votre beauté, notre passion.</p>
+        <div class="footer-socials">
+            <a href="https://instagram.com/VOTRE_COMPTE" target="_blank"><i class="fab fa-instagram"></i></a>
+            <a href="https://facebook.com/share/1bjkUSKtcR/?mibextid=wwXIfr" target="_blank"><i class="fab fa-facebook-f"></i></a>
+            <a href="https://tiktok.com/@VOTRE_COMPTE" target="_blank"><i class="fab fa-tiktok"></i></a>
+            <a href="https://wa.me/212775601994" target="_blank"><i class="fab fa-whatsapp"></i></a>
+        </div>
+    </footer>
+
+</body>
+</html>
